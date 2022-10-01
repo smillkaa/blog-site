@@ -13,6 +13,6 @@ const userData = [
     }
 ]
 // creates the data in the user table, the individualHooks will hash the password when the user is created
-const seedUser = () => User.bulkcreate(userData)
+const seedUser = () => User.bulkCreate(userData, {individualHooks: true});
 
 module.exports = seedUser
