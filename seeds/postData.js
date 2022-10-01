@@ -5,7 +5,6 @@ const postData = [
         title: "This is the first post",
         content: "This is the first post's content. This is the first post's content. This is the first post's content. This is the first post's content. This is the first post's content. This is the first post's content.",
         user: "userOne",
-        date: "07/27/2022",
         user_id: 1
 
     },
@@ -13,7 +12,6 @@ const postData = [
         title: "This is the second post",
         content: "This is the second post's content. This is the second post's content. This is the second post's content. This is the second post's content. This is the second post's content. This is the second post's content.",
         user: "userTwo",
-        date: "02/13/2022",
         user_id: 2
 
     }

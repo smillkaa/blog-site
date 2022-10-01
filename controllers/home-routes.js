@@ -7,8 +7,8 @@ router.get('/', (req, res) => {
   Post.findAll({
     attributes: [
       'id',
-      'post_url',
       'title',
+      'content',
       'created_at'
     ],
     include: [
@@ -30,9 +30,11 @@ router.get('/', (req, res) => {
       // const posts = postData.map(post => post.get({ plain: true }));
 
       res.render('homepage', postData[0]
+     
         // posts,
         // loggedIn: req.session.loggedIn
       );
+      console.log(postData[0])
     })
     .catch(err => {
       console.log(err);
