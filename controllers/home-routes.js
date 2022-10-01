@@ -27,12 +27,12 @@ router.get('/', (req, res) => {
     ]
   })
     .then(postData => {
-      const posts = postData.map(post => post.get({ plain: true }));
+      // const posts = postData.map(post => post.get({ plain: true }));
 
-      res.render('homepage', {
-        posts,
-        loggedIn: req.session.loggedIn
-      });
+      res.render('homepage', postData[0]
+        // posts,
+        // loggedIn: req.session.loggedIn
+      );
     })
     .catch(err => {
       console.log(err);
