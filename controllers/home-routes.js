@@ -4,6 +4,7 @@ const { Post, User, Comment } = require('../models');
 
 // get all posts
 router.get('/', (req, res) => {
+  console.log(req.session)
   Post.findAll({
     attributes: [
       'id',
@@ -27,13 +28,13 @@ router.get('/', (req, res) => {
     ]
   })
     .then(postData => {
-      // const posts = postData.map(post => post.get({ plain: true }));
-
-      res.render('homepage', postData[0]
+      const posts = postData.map(post => post.get({ plain: true }));
+      console.log(postData[0].get({ plain: true }))
+      res.render('homepage',{ posts })
      
         // posts,
         // loggedIn: req.session.loggedIn
-      );
+     
       console.log(postData[0])
     })
     .catch(err => {
@@ -88,6 +89,8 @@ router.get('/post/:id', (req, res) => {
     });
 });
 
+
+//log in
 router.get('/login', (req, res) => {
   if (req.session.loggedIn) {
     res.redirect('/');
