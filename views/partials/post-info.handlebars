@@ -1,12 +1,14 @@
-<article class="post">
+<article class="post mb-4">
       <div class="title">
         <h2>{{title}}</h2>
         <p>{{content}}</p>
       </div>
       <div class="meta">
-        {{user.username}}
-        {{created_at}}
+        <div class="fst-italic">
+        By {{user.username}}
+        </div>
+        {{format_date post.created_at}}
         |
-        <a href="/post/{{id}}">{{comments.length}} comment(s)</a>
+        <a href="/post/{{id}}" class="link">{{comments.length}} comment(s)</a>
       </div>
 </article>

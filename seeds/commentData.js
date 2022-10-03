@@ -12,3 +12,5 @@ const commentData = [
         post_id: 1
     }
 ]
+
+module.exports = commentData;
